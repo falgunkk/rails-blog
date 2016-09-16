@@ -1,11 +1,16 @@
 <p>
   <!--strong>Title:</strong-->
+  <strong><font size="4">Picture:</font></strong>
+  <br>
+  <%= image_tag @article.avatar.url(:medium) %>
+</p>
+<p>
   <strong><font size="4">Title:</font></strong>
   <%= @article.title %>
 </p>
 <p>
-   <strong><font size="4">Text:</font></strong>
-  <%= @article.text %>
+  <strong><font size="4">Text:</font></strong>
+  <%= @article.text %>
 </p>
 <h2><font size="4"><u>Comments</u></font></h2>   
 <%= render @article.comments%>

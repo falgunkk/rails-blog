@@ -9,6 +9,7 @@
   <tr>
     <th><font size="4">Title</th></font>
     <th><font size="4">Text</th></font>
+    <th><font size="4">Photo</th></font>
   </tr>
  
   <% @articles.each do |article| %>
@@ -16,6 +17,9 @@
     <tr>
       <td><%= link_to article.title,article_path(article) %></td>
       <td><%= article.text %></td>
+      
+      <td><%= image_tag article.avatar.url(:thumb) %></td>
+                
       <td><%= link_to 'Show', article_path(article) %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
       <td><%= link_to 'Destroy', article_path(article),
@@ -31,6 +35,7 @@
 
 
 <br>
+
 <!-- <br>
 <% unless params[:i] == '1' %>
   <%= link_to 'click here', action: 'index' , i: '1'%>
@@ -38,7 +43,7 @@
   <%= image_tag "index.jpeg" %>
   <%end%>
 <br> -->
-  
+ 
 <%#= link_to 'click here to go to an image page' , {:controller => :articles, :action => :image}%>
 <%#= link_to 'click here to go to an image page',image_path %>
 
