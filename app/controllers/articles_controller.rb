@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 #http_basic_authenticate_with name: "falgu", password: "falgu", except: [:index, :show]
+    #before_action :set_article,only: [:show,:edit,:update,:destroy]
+    before_action :authenticate_user!,except: [:index,:show]
+ 
   def index
     @articles = Article.all
   end
@@ -9,7 +12,8 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    #@article = Article.new
+    @article = current_user.articles.build
   end
 
   def edit
@@ -19,7 +23,7 @@ class ArticlesController < ApplicationController
   def create
     params.permit!
     # render plain: params[:article].inspect
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
     # article = Article.new(article_params)
     if @article.save
        redirect_to @article , {:notice => 'Your Article saved Succesfully' }

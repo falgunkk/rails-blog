@@ -1,9 +1,13 @@
 <!--<h1>Listing articles<h1>-->
-<%= image_tag "index1.jpeg" %>
+<%= image_tag "index1.jpeg" %><br>
+<%= link_to 'Sign Up', new_user_registration_path %><br>
+<!---<h3S> Already have an account </h3>-->
+<%#= link_to 'Log in', new_user_session_path %><br>
  <!---h1>Hello,Welcome</h1-->
  <%#= link_to 'My Blog', controller: 'articles' %>
  <br>
-<%= link_to 'New article', new_article_path %>
+<%#= link_to 'New article', new_article_path %>
+<%= link_to 'New article', new_user_session_path %>
 <table>
 
   <tr>

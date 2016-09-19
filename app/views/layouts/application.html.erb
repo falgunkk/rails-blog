@@ -17,4 +17,19 @@
     <% end %>
     <%= yield %>
   </body>
+  <!---<p class="notice"><%= notice %></p>-->
+  <p class="alert"><%= alert %></p>
+  <% if user_signed_in? %>
+  <li>
+  <h4> Logged in As:</h4>
+  <h4S><%=current_user.email %></h4> 
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
+
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+  <%end%>
+
 </html>
