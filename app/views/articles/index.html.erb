@@ -1,6 +1,10 @@
 <!--<h1>Listing articles<h1>-->
 <%= image_tag "index1.jpeg" %><br>
+<% if user_signed_in? %>
+<% if current_user.role =='admin' %>
 <%= link_to 'Sign Up', new_user_registration_path %><br>
+<%end%>
+<%end%>
 <!---<h3S> Already have an account </h3>-->
 <%#= link_to 'Log in', new_user_session_path %><br>
  <!---h1>Hello,Welcome</h1-->
@@ -25,10 +29,14 @@
       <td><%= image_tag article.avatar.url(:thumb) %></td>
                 
       <td><%= link_to 'Show', article_path(article) %></td>
+         <% if user_signed_in? %>
+         <td><% if can? :update, article %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
       <td><%= link_to 'Destroy', article_path(article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+       <%end%>
+       <%end%>
       
     </tr>
 

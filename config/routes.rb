@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     	resources :comments	
     end
    	#get '/image' => 'articles#image'
+   	get '/userlist' =>'userlist#index'
+   	#get '/k', to: 'userlists#index'
+   	#root 'userlists#index'
+
     
 end
 

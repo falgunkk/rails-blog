@@ -1,4 +1,14 @@
 
 <%= image_tag "welcome1.png" %>
 <br>
+<% if user_signed_in? %>
+<% unless current_user.role =='admin' %>
 <%= link_to 'Go to Article Page',controller: 'articles'%>
+<%end%>
+<%end%>
+<% if user_signed_in? %>
+<% if current_user.role =='admin' %>
+<%= link_to 'Users list', {:controller => :userlist, :action => :index} %>
+<%end%>
+<%end%>
+<%#= link_to 'My profile' %>
