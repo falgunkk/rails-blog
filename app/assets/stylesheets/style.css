@@ -6,3 +6,7 @@ body {
 a:link, a:active, a:visited {
    color: #CD0000;
 }
+td
+{
+    padding:0 15px 0 15px;
+}

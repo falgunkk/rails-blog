@@ -2,9 +2,11 @@
 <%= image_tag "index1.jpeg" %><br>
 <% if user_signed_in? %>
 <% if current_user.role =='admin' %>
-<%= link_to 'Sign Up', new_user_registration_path %><br>
+<%#= link_to 'Sign Up', new_user_registration_path %><br>
+<%= link_to 'Users list', {:controller => :userlist, :action => :index} %>
 <%end%>
 <%end%>
+
 <!---<h3S> Already have an account </h3>-->
 <%#= link_to 'Log in', new_user_session_path %><br>
  <!---h1>Hello,Welcome</h1-->
@@ -30,7 +32,7 @@
                 
       <td><%= link_to 'Show', article_path(article) %></td>
          <% if user_signed_in? %>
-         <td><% if can? :update, article %></td>
+         <td><% if (can? :update, article) or current_user.role =='admin' %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
       <td><%= link_to 'Destroy', article_path(article),
               method: :delete,
@@ -46,16 +48,7 @@
 
 
 
-<br>
-
-<!-- <br>
-<% unless params[:i] == '1' %>
-  <%= link_to 'click here', action: 'index' , i: '1'%>
-<% else %>
-  <%= image_tag "index.jpeg" %>
-  <%end%>
-<br> -->
- 
+<br> 
 <%#= link_to 'click here to go to an image page' , {:controller => :articles, :action => :image}%>
 <%#= link_to 'click here to go to an image page',image_path %>
 
