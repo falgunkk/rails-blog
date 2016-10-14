@@ -51,3 +51,6 @@ gem "paperclip", "~> 5.0.0"
 gem "authlogic", "~> 3.4.6"
 gem 'devise'
 gem 'cancan'
+gem "omniauth-google-oauth2", "~> 0.2.1"
+#gem "ruby", "2.3.0"
+gem 'pg'
