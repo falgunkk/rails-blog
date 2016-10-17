@@ -1,6 +1,6 @@
 class RemoveUidFromUsers < ActiveRecord::Migration[5.0]
    def up
-    remove_column :users, :uid
+    remove_column :users, :uid,:string
   end
 
   def down
