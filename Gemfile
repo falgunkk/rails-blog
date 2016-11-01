@@ -55,3 +55,5 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 #gem "ruby", "2.3.0"
 gem 'pg'
 gem 'capistrano3-puma' , group: :development
+  gem 'capistrano-bundler',group: :development
+  gem 'capistrano-rvm' ,group: :development
