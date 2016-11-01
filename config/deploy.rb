@@ -72,5 +72,6 @@ set :puma_init_active_record, false
 set :puma_preload_app, false
 set :puma_plugins, []  #accept array of plugins
 set :nginx_use_ssl, false
-
+#set :rbenv_path, '/home/deploy/.rbenv/'
+set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
