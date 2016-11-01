@@ -54,3 +54,4 @@ gem 'cancan'
 gem "omniauth-google-oauth2", "~> 0.2.1"
 #gem "ruby", "2.3.0"
 gem 'pg'
+gem 'capistrano3-puma' , group: :development
