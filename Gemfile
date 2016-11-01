@@ -57,4 +57,4 @@ gem 'pg'
 gem 'capistrano3-puma' , group: :development
   gem 'capistrano-bundler',group: :development
   gem 'capistrano-rvm' ,group: :development
-
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"

@@ -72,3 +72,8 @@ set :nginx_use_ssl, false
 #set :rbenv_path, '/home/deploy/.rbenv/'
 set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
+namespace :deploy do
+  before 'check:linked_files', 'puma:config'
+  before 'check:linked_files', 'puma:nginx_config'
+  after 'puma:smart_restart', 'nginx:restart'
+end
