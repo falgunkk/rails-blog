@@ -29,9 +29,6 @@ set :ssh_options, {
    auth_methods: %w(password),
    password: 'qburst'
  }
-set :rvm_ruby_version, '2.3.0p0'
-SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
-
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
