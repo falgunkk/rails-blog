@@ -60,4 +60,6 @@ gem 'capistrano-rvm' ,group: :development
 gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 gem 'capistrano-passenger'
 gem 'capistrano-rails' ,group: :development
+gem 'rake', '11.2.2'
+
 
