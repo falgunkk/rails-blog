@@ -61,8 +61,9 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.3)
-    capistrano-passenger (0.2.0)
-      capistrano (~> 3.0)
+    capistrano-rails (1.2.0)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
@@ -158,9 +159,6 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-    passenger (5.0.30)
-      rack
-      rake (>= 0.8.1)
     pg (0.19.0)
     pkg-config (1.1.7)
     puma (3.6.0)
@@ -250,7 +248,7 @@ DEPENDENCIES
   byebug
   cancan
   capistrano-bundler
-  capistrano-passenger
+  capistrano-rails
   capistrano-rvm
   capistrano3-puma
   coffee-rails (~> 4.2)
@@ -261,7 +259,6 @@ DEPENDENCIES
   mysql2 (>= 0.3.18, < 0.5)
   omniauth-google-oauth2 (~> 0.2.1)
   paperclip (~> 5.0.0)
-  passenger (>= 5.0.25)
   pg
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
