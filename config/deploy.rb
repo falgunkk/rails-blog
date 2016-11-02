@@ -29,7 +29,7 @@ set :ssh_options, {
    auth_methods: %w(password),
    password: 'qburst'
  }
- set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
+
 
 
 # Default value for :format is :airbrussh.
@@ -73,5 +73,5 @@ set :ssh_options, {
 # set :nginx_use_ssl, false
 # #set :rbenv_path, '/home/deploy/.rbenv/'
 # set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
-
+ # set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 
