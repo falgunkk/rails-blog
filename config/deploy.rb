@@ -30,6 +30,8 @@ set :ssh_options, {
    password: 'qburst'
  }
 
+set :passenger_environment_variables, { :path => '/home/qburst/.rvm/gems/ruby-2.3.0/wrappers/ruby/bin:$PATH' }
+set :passenger_restart_command, '/home/qburst/.rvm/gems/ruby-2.3.0/wrappers/ruby/bin/passenger-config restart-app'
 
 
 # Default value for :format is :airbrussh.
